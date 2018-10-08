@@ -1,0 +1,32 @@
+## bioinformatic commands used on our dataset.  These were used on each pair of FASTQ files
+
+## cutadapt was used to trim adapters from reads.
+cutadapt flu0_R1.fastq.gz flu0_R2.fastq.gz -m 25 -n 2 -j 4 -o flu0_R1.trimmed.fastq.gz -p flu0_R2.trimmed.fastq.gz \
+-b TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG -b GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG \
+-a CAAGCAGAAGACGGCATACGAGATTCGCCTTAGTCTCGTGGGCTCGG -a CAAGCAGAAGACGGCATACGAGATTCGCCTTAGTCTCGTGGGCTCGG \
+-a CAAGCAGAAGACGGCATACGAGATCTAGTACGGTCTCGTGGGCTCGG -a CAAGCAGAAGACGGCATACGAGATTTCTGCCTGTCTCGTGGGCTCGG \
+-a CAAGCAGAAGACGGCATACGAGATGCTCAGGAGTCTCGTGGGCTCGG -a CAAGCAGAAGACGGCATACGAGATAGGAGTCCGTCTCGTGGGCTCGG \
+-a CAAGCAGAAGACGGCATACGAGATCATGCCTAGTCTCGTGGGCTCGG -a AATGATACGGCGACCACCGAGATCTACACTAGATCGCTCGTCGGCAGCGTC \
+-a AATGATACGGCGACCACCGAGATCTACACCTCTCTATTCGTCGGCAGCGTC
+
+## Sickle was used to trim for quality
+sickle pe -f flu0_R1.trimmed.fastq.gz -r flu0_R2.trimmed.fastq.gz -t sanger -o flu0_R1.qc.fastq.gz -p flu0_R2.qc.fastq.gz -s flu0.qcsingles.fastq.gz.fastq -n
+	
+done
+
+## PEAR was used to merge paired end reads.  This command was repeated for each set of paired fastq files
+PEAR -f flu0_R1.qc.fastq.gz -r flu0_R2.qc.fastq.gz -n 25 -o flu0.merged
+
+## bowtie2 was used to index the reference genomes
+bowtie2-build influenza.fasta flu_ref
+
+## reads were mapped to the reference genomes with bowtie 2
+bowtie2 -x flu_ref -U flu0.merged.assembled.fastq -S flu0.mapped.SAM 
+
+## SAM files were converted to BAM, sorted, and indexed
+samtools view -bS flu0.mapped.SAM > flu0.mapped.BAM
+samtools sort flu0.mapped.BAM -o flu0.mapped.sorted.BAM
+samtools index flu0.mapped.sorted.BAM
+
+## bam-readcount was used to determine the read depth at each position
+bam-readcount -b 20 flu0.mapped.sorted.BAM > flu0.txt

@@ -1,0 +1,77 @@
+library(ggplot2)
+library(gridExtra)
+
+flu0s1 <- ggplot(data=flu0_s1, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 1, 0% DMSO") +
+  geom_line()
+flu0s2 <- ggplot(data=flu0_s2, aes(x=V1,y=V2, group=1))  + labs(x="Position",y="Read depth", title = "Segment 2, 0% DMSO") +
+  geom_line()
+flu0s3 <- ggplot(data=flu0_s3, aes(x=V1,y=V2, group=1))  + labs(x="Position",y="Read depth", title = "Segment 3, 0% DMSO") +
+  geom_line()
+flu0s4 <- ggplot(data=flu0_s4, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 4, 0% DMSO") +
+  geom_line()
+flu0s5 <- ggplot(data=flu0_s5, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 5, 0% DMSO") +
+  geom_line()
+flu0s6 <- ggplot(data=flu0_s6, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 6, 0% DMSO") +
+  geom_line()
+flu0s7 <- ggplot(data=flu0_s7, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 7, 0% DMSO") +
+  geom_line()
+flu0s8 <- ggplot(data=flu0_s8, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 8, 0% DMSO") +
+  geom_line()
+
+
+flu15s1 <- ggplot(data=flu15_s1, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 1, 15% DMSO") +
+  geom_line()
+flu15s2 <- ggplot(data=flu15_s2, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 2, 15% DMSO") +
+  geom_line()
+flu15s3 <- ggplot(data=flu15_s3, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 3, 15% DMSO") +
+  geom_line()
+flu15s4 <- ggplot(data=flu15_s4, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 4, 15% DMSO") +
+  geom_line()
+flu15s5 <- ggplot(data=flu15_s5, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 5, 15% DMSO") +
+  geom_line()
+flu15s6 <- ggplot(data=flu15_s6, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 6, 15% DMSO") +
+  geom_line()
+flu15s7 <- ggplot(data=flu15_s7, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 7, 15% DMSO") +
+  geom_line()
+flu15s8 <- ggplot(data=flu15_s8, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 8, 15% DMSO") +
+  geom_line()
+
+
+flu50s1 <- ggplot(data=flu50_s1, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 1, 50% DMSO") +
+  geom_line()
+flu50s2 <- ggplot(data=flu50_s2, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 2, 50% DMSO") +
+  geom_line()
+flu50s3 <- ggplot(data=flu50_s3, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 3, 50% DMSO") +
+  geom_line()
+flu50s4 <- ggplot(data=flu50_s4, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 4, 50% DMSO") +
+  geom_line()
+flu50s5 <- ggplot(data=flu50_s5, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 5, 50% DMSO") +
+  geom_line()
+flu50s6 <- ggplot(data=flu50_s6, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 6, 50% DMSO") +
+  geom_line()
+flu50s7 <- ggplot(data=flu50_s7, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 7, 50% DMSO") +
+  geom_line()
+flu50s8 <- ggplot(data=flu50_s8, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 8, 50% DMSO") +
+  geom_line()
+
+
+
+flu90s1 <- ggplot(data=flu90_s1, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 1, 90% DMSO") +
+  geom_line()
+flu90s2 <- ggplot(data=flu90_s2, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 2, 90% DMSO") +
+  geom_line()
+flu90s3 <- ggplot(data=flu90_s3, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 3, 90% DMSO") +
+  geom_line()
+flu90s4 <- ggplot(data=flu90_s4, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 4, 90% DMSO") +
+  geom_line()
+flu90s5 <- ggplot(data=flu90_s5, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 5, 90% DMSO") +
+  geom_line()
+flu90s6 <- ggplot(data=flu90_s6, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 6, 90% DMSO") +
+  geom_line()
+flu90s7 <- ggplot(data=flu90_s7, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 7, 90% DMSO") +
+  geom_line()
+flu90s8 <- ggplot(data=flu90_s8, aes(x=V1,y=V2, group=1)) + labs(x="Position",y="Read depth", title = "Segment 8, 90% DMSO") +
+  geom_line()
+
+
+grid.arrange(flu0s1, flu0s2, flu0s3, flu0s4, flu0s5, flu0s6, flu0s7, flu0s8, flu15s1, flu15s2, flu15s3, flu15s4, flu15s5, flu15s6, flu15s7, flu15s8, flu50s1, flu50s2, flu50s3, flu50s4, flu50s5, flu50s6, flu50s7, flu50s8, flu90s1, flu90s2, flu90s3, flu90s4, flu90s5, flu90s6, flu90s7, flu90s8, nrow = 4)
