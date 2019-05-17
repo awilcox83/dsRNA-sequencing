@@ -41,9 +41,13 @@ We also include the FASTA files that serve as reference sequences for influenza 
 ### 3. Code ###
 Below are descriptions of the code files used to generate the tables, figures, and statistics in the paper.
 
-1) DMSO_bioinformatics.sh: This file is shell script that downloads and processes raw sequencing reads from the BioProjects above. The commands process and map sequence data to reference genomes and culminate in files determining read depth at each position in the phi-6 and influenza virus genomes. Please note the comments at the beginning of the file, which outline the software requirements.
+1) DMSO_bioinformatics.sh: This file is shell script that downloads and processes raw sequencing reads from the BioProjects above. The commands process and map sequence data to reference genomes and culminate in files determining read depth at each position in the phi-6 and influenza virus genomes. Please note the comments at the beginning of the file, which outline the software requirements.  This script calls the following two R scripts.
 
-2) 
+2) read_coverage_plots.R: This file is the R script used to generate the figures showing the coverage per base.  It writes data used as CSV, and saves plots as PDF.
+
+3) mapping_percentages.R: This file is the R script used to generate the figure showing the percentage of reads that map to phi-6 under different treatments before sequencing.  It saves its plot as a PDF.
+
+
 
 
 
