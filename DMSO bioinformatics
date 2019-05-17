@@ -156,19 +156,18 @@ do
 done
 
 # Mapping data from bowtie converted to tab-delimited file file for use in R
-printf 'Name\tTotal\tUnpaired\tUnaligned\tAlignedOnce\tAlignedMultiple\tPercentAligned\n' >> mapping_percentages.tab
+printf 'Name\tTotal\tUnpaired\tUnaligned\tAlignedOnce\tAlignedMultiple\tPercentAligned\n' >> mapping_percentages.tsv
 for file in bowtie_Phi6*
 do
 	prefix=${file%.txt}
 	title=${prefix#"bowtie_"}
-	printf ${title} >> mapping_percentages.tab
-	printf '\t' >> mapping_percentages.tab
-	while read word _; do printf '%s\t' "$word"; done < ${prefix}.txt >> mapping_percentages.tab
-	printf '\n' >> 	mapping_percentages.tab
+	printf ${title} >> mapping_percentages.tsv
+	printf '\t' >> mapping_percentages.tsv
+	while read word _; do printf '%s\t' "$word"; done < ${prefix}.txt >> mapping_percentages.tsv
+	printf '\n' >> 	mapping_percentages.tsv
 done
 
 
 #Run R scripts to generate coverage plots and CSV files of data
 Rscript read_coverage_plots.R
 Rscript mapping_percentage_plots.R
-
