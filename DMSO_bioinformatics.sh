@@ -100,7 +100,7 @@ done
 for file in *_R1.qc.fastq.gz
 do
 	prefix=${file%_R1.qc.fastq.gz}
-	PEAR -f ${prefix}_R1.qc.fastq.gz -r ${prefix}_R2.qc.fastq.gz -n 25 -o ${prefix}.merged > pear_${prefix}.txt
+	pear -f ${prefix}_R1.qc.fastq.gz -r ${prefix}_R2.qc.fastq.gz -n 25 -o ${prefix}.merged > pear_${prefix}.txt
 done
 #Results of pear command are in .txt files for each file (same basename, i.e. influenza_0.txt)
 
