@@ -1,4 +1,4 @@
-#dsRNAseq: Code for "Next-generation sequencing of double stranded RNA is greatly improved by treatment with the inexpensive denaturing reagent DMSO"
+# dsRNAseq: Code for "Next-generation sequencing of double stranded RNA is greatly improved by treatment with the inexpensive denaturing reagent DMSO"
 
 This github repository includes code (and links to data) from the manuscript: 
 Next-generation sequencing of double stranded RNA is greatly improved by treatment with the inexpensive denaturing reagent DMSO
@@ -8,7 +8,7 @@ If you are reading or using this, let us know how these data were useful for you
 
 If you use these data and code, please cite the bioRxiv preprint or paper.
 
-##Quick Start
+## Quick Start
 1. Make sure packages are installed (see comments in DMSO_bioinformatics.sh)
 2. chmod +x DMSO_bioinformatics.sh
 3. ./DMSO_bioinformatics.sh
