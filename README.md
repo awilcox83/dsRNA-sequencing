@@ -13,11 +13,6 @@ If you use these data and code, please cite the bioRxiv preprint or paper.
 2. chmod +x DMSO_bioinformatics.sh
 3. ./DMSO_bioinformatics.sh
 
-### CONTENTS
-### 1. Project Description
-### 2. Data
-### 3. Code
-
 ### 1. Project Description
 
 The origin of this study was in our efforts to sequence double-stranded RNA phages in the Cystoviridae (phi6 and its relatives) in a cost-effective and high-throughput manner. Alex hit upon earlier literature using DMSO to improve reverse transcriptase PCR (RT_PCR) and Sanger Sequencing, and tried using DMSO to imporve next-generation sequencing. This manuscript details our effort to validate this methodology. We found that DMSO greatly improved sequencing read recovery even with very low starting nucleic acid concentrations. We also tested whether DMSO affected read recovery from ssRNA viral genomes (Influenza), and whether it improved recovery from metagenomic samples - see abstract below for details. This repository has the code underlying the results presented in the manuscript.
