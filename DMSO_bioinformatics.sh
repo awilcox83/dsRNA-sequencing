@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Shell script to run analyses associated with the paper. See README file.  
 # Download all FASTQ files to the same directory. The following bash scripts will carry out our 
 # analyses on every pair of FASTQ files in this folder.
