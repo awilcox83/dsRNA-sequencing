@@ -10,6 +10,7 @@
 #pear 0.9.6
 #samtools 1.9
 #bam-readcountunstable (commit nogit)
+#R 3.5
 
 #Example of installation on required packages in each of 
 #Install required packages
@@ -25,6 +26,7 @@ pear
 samtools --help 
 bowtie2 -h
 bam-readcount -v
+R --help
 
 # Download and rename the sequence files from SRA via EBI
 
