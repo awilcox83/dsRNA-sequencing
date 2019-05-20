@@ -25,12 +25,9 @@ Raw data consists of sequencing output from the Illumina MiSeq platform, i.e. FA
 
 Bacteriophage phi-6 (Cystoviridae):
 Accession: PRJNA527098 (ID: 527098) https://www.ncbi.nlm.nih.gov/bioproject/527098
-[Description of FASTQ file names and what samples they represent]
-[Where are concentrated, nuclease treated, samples?]
 
 Influenza Virus (A/California/07/2009):
 Accession: PRJNA527101 (ID: 527101) https://www.ncbi.nlm.nih.gov/bioproject/PRJNA527101
-[Description of FASTQ file names and what samples they represent]
 
 Mock Eukaryotic Viral Community (NIBSC reagent 11/242-001)
 Accession: PRJNA527100 (ID: 527100)
