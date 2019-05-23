@@ -172,6 +172,8 @@ do
 done
 
 
-#Run R scripts to generate coverage plots and CSV files of data
+# Run R scripts to generate coverage plots and CSV files of data
+# We encountered some errors with loading libraries when the following scripts were invoked from the shell script
+# If this occurs, try running directly from the command line or in RStudio.
 Rscript read_coverage_plots.R
 Rscript mapping_percentage_plots.R
