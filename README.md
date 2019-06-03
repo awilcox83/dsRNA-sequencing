@@ -2,7 +2,8 @@
 
 This github repository includes code (and links to data) from the manuscript: 
 Next-generation sequencing of double stranded RNA is greatly improved by treatment with the inexpensive denaturing reagent DMSO
-Alexander H. Wilcox, Eric Delwart, and Samuel L. Díaz Muñoz
+Alexander H. Wilcox, Eric Delwart, Samuel L. Díaz Muñoz
+bioRxiv 644591; doi: https://doi.org/10.1101/644591
 
 If you are reading or using this, let us know how these data were useful for you. Always open to collaborate! Please contact us!
 
