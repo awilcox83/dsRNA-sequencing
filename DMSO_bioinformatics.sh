@@ -49,7 +49,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR872/008/SRR8729118/SRR8729118_2.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR872/007/SRR8729117/SRR8729117_2.fastq.gz -O phi6_90_R2.fastq.gz
 
 #Experiments to test the effect of nuclease treatment, lysate concentration, and DMSO on viral read recovery (experiment 2)
-# In the following filenames, N = treated with nucleases, C = concentrated sample, D = treated with DMSO
+# In the following filenames, N = treated with nucleases, C = concentrated sample, D = treated with DMSO, B = boiled
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/001/SRR9030131/SRR9030131_1.fastq.gz -O Phi6_NCD_R1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/001/SRR9030131/SRR9030131_2.fastq.gz -O Phi6_NCD_R2.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/002/SRR9030132/SRR9030132_1.fastq.gz -O Phi6_NC_R1.fastq.gz
@@ -62,6 +62,11 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/005/SRR9030135/SRR9030135_1.fastq
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/005/SRR9030135/SRR9030135_2.fastq.gz -O Phi6_C_R2.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/006/SRR9030136/SRR9030136_1.fastq.gz -O Phi6_ND_R1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR903/006/SRR9030136/SRR9030136_2.fastq.gz -O Phi6_ND_R2.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR971/003/SRR9717273/SRR9717273_1.fastq.gz -O Phi6_B_R1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR971/003/SRR9717273/SRR9717273_2.fastq.gz -O Phi6_B_R2.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR971/004/SRR9717274/SRR9717274_1.fastq.gz -O Phi6_D_R1.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR971/004/SRR9717274/SRR9717274_2.fastq.gz -O Phi6_D_R2.fastq.gz
+
 
 #These files were analyzed with a custom virus discovery pipeline, so commenting out from further analysis. See paper for details
 # wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR872/005/SRR8729125/SRR8729125_1.fastq.gz -O cocktail_0_R1.fastq.gz
