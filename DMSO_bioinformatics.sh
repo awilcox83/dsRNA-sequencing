@@ -182,3 +182,20 @@ done
 # If this occurs, try running directly from the command line or in RStudio.
 Rscript read_coverage_plots.R
 Rscript mapping_percentage_plots.R
+
+# Calculate accuracy
+#Firstly, generate vcf files.  Filtering for all mutations with a phred score >= 30.
+
+for file in *.mapped.sorted.BAM
+do
+	prefix=${file%.mapped.sorted.BAM}
+	freebayes -f phi6.fasta -q 30 -m 20 -F 0 -X -i -u -K -J -p 1 ${prefix}.mapped.sorted.BAM > ${prefix}.vcf
+done
+
+# run python script to calculate phred scores, assuming every mutation that appears is an error.
+
+for file in *.vcf
+do
+	prefix=${file%.vcf}
+	python3 mutation_counter.py -v ${prefix}.vcf -r ${prefix}.tab -o ${prefix}_accuracy.txt
+done
