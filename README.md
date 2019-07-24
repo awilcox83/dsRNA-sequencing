@@ -44,3 +44,5 @@ Below are descriptions of the code files used to generate the tables, figures, a
 2) read_coverage_plots.R: This file is the R script used to generate the figures showing the coverage per base. It writes data used as CSV, and saves plots as PDF.
 
 3) mapping_percentages.R: This file is the R script used to generate the figure showing the percentage of reads that map to phi-6 under different treatments before sequencing.  It saves its plot as a PDF.
+
+4) mutation_counter.py:  This script takes a vcf file and bam-readcount file, counts the total mutations and total bases sequenced, and calculates a phred score (assuming every mutation is an error).  It saves its output as a txt file.
