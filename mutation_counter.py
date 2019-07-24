@@ -1,4 +1,4 @@
-# This script parses the VCF file.  It counts the total number of mutations (with less than 5% prevalence)
+# This script parses the VCF file.  It counts the total number of mutations (with less than 5% prevalence), counts the total number of sequenced bases, and calculates an error rate.
 #!/usr/bin/env python 
 
 from argparse import ArgumentParser
