@@ -79,7 +79,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR971/004/SRR9717274/SRR9717274_2.fastq
 # wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR872/002/SRR8729122/SRR8729122_2.fastq.gz -O cocktail_90_R2.fastq.gz
 
 #Number of reads per file
-wc -l *.fastq.gz | awk '{print $1/4 " " $2}'
+for x in *.fastq.gz; do gzcat "$x" | wc -l | awk '{printf $1/4 " "}' && echo $x; done
 
 # cutadapt was used to trim adapters and primers from reads. Primer and adapter sequences for Illumina Nextera library prep kit retrieved from https://support.illumina.com/content/dam/illumina-support/documents/documentation/chemistry_documentation/experiment-design/illumina-adapter-sequences-1000000002694-10.pdf“.
 for file in *_R1.fastq.gz
