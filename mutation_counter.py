@@ -62,6 +62,9 @@ g.write("total bases = " + str(baseCount)+ "\n")
 incorrect = mutationCount/baseCount
 g.write("Mutation rate = " + str(incorrect*100)+"%\n")
 #calculate what phred would be for this error rate
-phred = math.log(incorrect,10) * -10
-g.write("Phred = " + str(phred))
+if incorrect !=0:
+	phred = math.log(incorrect,10) * -10
+	g.write("Phred = " + str(phred))
+else:
+	g.write("No mutations, phred cannot be calculated")
 g.close()
