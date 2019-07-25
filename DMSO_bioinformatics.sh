@@ -11,6 +11,7 @@
 #samtools 1.9
 #bam-readcountunstable (commit nogit)
 #R 3.5
+#Freebayes 1.3.1-dirty
 
 #Example of installation on required packages in each of 
 #Install required packages
@@ -27,6 +28,7 @@ samtools --help
 bowtie2 -h
 bam-readcount -v
 R --help
+freebayes -h
 
 # Download and rename the sequence files from SRA via EBI
 
