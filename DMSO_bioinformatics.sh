@@ -12,6 +12,7 @@
 #bam-readcountunstable (commit nogit)
 #R 3.5
 #Freebayes 1.3.1-dirty
+#Shadow Regression 1.0 (http://bcb.dfci.harvard.edu/~vwang/shadowRegression.html)
 
 #Example of installation on required packages in each of 
 #Install required packages
