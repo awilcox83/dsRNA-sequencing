@@ -1,16 +1,7 @@
-# this requries the ShadowRegression package found at
-# http://bcb.PhiDfci.harvard.edu/~vwang/shadowRegression.html
-# and its dependency ShortRead
 
 library(ShortRead)
 library(ShadowRegression)
 library(ggplot2)
-
-# reads need to be the same length, so use cutadapt to trim to 40bp
-cutadapt -l 40 -m 40 -o phi6_15_40.fastq influenza_50.merged.assembled.fastq
-cutadapt -l 40 -m 40 -o phi6_15_40.fastq influenza_50.merged.assembled.fastq
-cutadapt -l 40 -m 40 -o phi6_15_40.fastq influenza_50.merged.assembled.fastq
-
 
 # convert fastq files to rcnt
 
@@ -60,21 +51,21 @@ names(FluDfErrorRate)<- c("DMSO", "Error Rate", "Std Error")
 
 # make bar charts to compare error rates
 
-phiErrorRate = ggplot(data=PhiDfErrorRate, aes(x=dmsoTreatment, y=errors, se=stdErrors)) + 
-  geom_col(color="black",fill="white") +
-  geom_errorbar(aes(ymin=errors-stdErrors, ymax=errors+stdErrors), width=.2,
-              position=position_dodge(.9)) +
-  xlab("DMSO treatment") + 
-  ylab("error rate (per read)")
-ggsave("phiErrorRate.pdf")
-
-fluErrorRate = ggplot(data=dfErrorRate, aes(x=dmsoTreatment, y=errors, se=stdErrors)) + 
+phiErrorRate = ggplot(data=PhiDfErrorRate,  aes(x=dmsoTreatment, y=errors, se=stdErrors)) + 
   geom_col(color="black",fill="white") +
   geom_errorbar(aes(ymin=errors-stdErrors, ymax=errors+stdErrors), width=.2,
                 position=position_dodge(.9)) +
   xlab("DMSO treatment") + 
   ylab("error rate (per read)")
-ggsave("fluErrorRate")
+ggsave("phiErrorRate.pdf")
+
+fluErrorRate = ggplot(data=FluDfErrorRate, aes(x=dmsoTreatment, y=errors, se=stdErrors)) + 
+  geom_col(color="black",fill="white") +
+  geom_errorbar(aes(ymin=errors-stdErrors, ymax=errors+stdErrors), width=.2,
+                position=position_dodge(.9)) +
+  xlab("DMSO treatment") + 
+  ylab("error rate (per read)")
+ggsave("fluErrorRate.pdf")
 
 
 # make robust linear regression models for each
@@ -108,8 +99,8 @@ phiPlot = ggplot() +
   geom_smooth(data=PhiDf50, aes(x=Tags, y=Shadows, color="50% DMSO"), method="rlm", se=TRUE)+
   geom_smooth(data=PhiDf90, aes(x=Tags, y=Shadows, color="90% DMSO"), method="rlm", se=TRUE) +
   scale_colour_manual("", 
-                    breaks = c("15% DMSO", "50% DMSO", "90% DMSO"),
-                    values = c("green ", "blue", "red"))
+                      breaks = c("15% DMSO", "50% DMSO", "90% DMSO"),
+                      values = c("green ", "blue", "red"))
 ggsave("phiPlot.pdf")
 
 # and for flu
@@ -135,7 +126,7 @@ FluPlot = ggplot() +
   geom_smooth(data=FluDf50, aes(x=Tags, y=Shadows, color="50% DMSO"), method="rlm", se=TRUE)+
   geom_smooth(data=FluDf90, aes(x=Tags, y=Shadows, color="90% DMSO"), method="rlm", se=TRUE) +
   scale_colour_manual("", 
-                    breaks = c("0% DMSO", "15% DMSO", "50% DMSO", "90% DMSO"),
-                    values = c("black", "green ", "blue", "red"))
+                      breaks = c("0% DMSO", "15% DMSO", "50% DMSO", "90% DMSO"),
+                      values = c("black", "green ", "blue", "red"))
 ggsave("FluPlot.pdf")
 
