@@ -46,3 +46,5 @@ Below are descriptions of the code files used to generate the tables, figures, a
 3) mapping_percentages.R: This file is the R script used to generate the figure showing the percentage of reads that map to phi-6 under different treatments before sequencing.  It saves its plot as a PDF.
 
 4) mutation_counter.py:  This script takes a vcf file and bam-readcount file, counts the total mutations and total bases sequenced, and calculates a phred score (assuming every mutation is an error).  It saves its output as a txt file.
+
+5) readAccuracy.R:  This file is the R script used to run the shadow regression analyses and check read accuracy.  It saves its plots as PDFs.
