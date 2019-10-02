@@ -208,3 +208,13 @@ do
 	prefix=${file%.vcf}
 	python3 mutation_counter.py -v ${prefix}.vcf -r ${prefix}.tab -o ${prefix}_accuracy.txt
 done
+
+# check accuracy with ShadowRegression in R
+cutadapt -l 40 -m 40 -o flu_0_40.fastq influenza_0.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o flu_15_40.fastq influenza_15.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o flu_50_40.fastq influenza_50.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o flu_90_40.fastq influenza_90.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o phi6_15_40.fastq phi6_15.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o phi6_50_40.fastq phi6_50.merged.assembled.fastq
+cutadapt -l 40 -m 40 -o phi6_90_40.fastq phi6_90.merged.assembled.fastq
+Rscript readAccuracy.r
